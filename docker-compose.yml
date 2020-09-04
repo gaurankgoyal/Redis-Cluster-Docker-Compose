@@ -1,0 +1,73 @@
+version: '2'
+services:
+  redis-node-0:
+    build:
+      context: ./redis_node
+      dockerfile: ./Dockerfile
+    volumes:
+      - redis-cluster_data-0:/data
+
+  redis-node-1:
+    build:
+      context: ./redis_node
+      dockerfile: ./Dockerfile
+    volumes:
+      - redis-cluster_data-1:/data
+
+  redis-node-2:
+    build:
+      context: ./redis_node
+      dockerfile: ./Dockerfile
+    volumes:
+      - redis-cluster_data-2:/data
+
+  redis-node-3:
+    build:
+      context: ./redis_node
+      dockerfile: ./Dockerfile
+    volumes:
+      - redis-cluster_data-3:/data
+
+  redis-node-4:
+    build:
+      context: ./redis_node
+      dockerfile: ./Dockerfile
+    volumes:
+      - redis-cluster_data-4:/data
+
+  redis-node-5:
+    build:
+      context: ./redis_node
+      dockerfile: ./Dockerfile
+    volumes:
+      - redis-cluster_data-5:/data
+
+  redis-cluster-init:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - redis-node-0
+      - redis-node-1
+      - redis-node-2
+      - redis-node-3
+      - redis-node-4
+      - redis-node-5
+    environment:
+      - 'PORT=6379'
+      - 'REDIS_CLUSTER_REPLICAS=1'
+      - 'REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5'
+
+volumes:
+  redis-cluster_data-0:
+    driver: local
+  redis-cluster_data-1:
+    driver: local
+  redis-cluster_data-2:
+    driver: local
+  redis-cluster_data-3:
+    driver: local
+  redis-cluster_data-4:
+    driver: local
+  redis-cluster_data-5:
+    driver: local
