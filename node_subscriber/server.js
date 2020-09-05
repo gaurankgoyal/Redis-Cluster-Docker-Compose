@@ -26,11 +26,7 @@ const nodes = [
 	},
 ]
 
-const sub = new Redis.Cluster(nodes, {
-	redisOptions:{
-		scaleReads: "slave",
-  },
-});
+const sub = new Redis.Cluster(nodes);
 
 sub.on('message', (channel, message) => {
     console.log(`Received the following message from ${channel}: ${message}`);
