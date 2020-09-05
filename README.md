@@ -1,4 +1,11 @@
 # Locusnine-Project
+## PROBLEM STATEMENT
+
+Redis Poor Man Cluster is a group of stand alone independent Redis Docker Containers used distributedly.A Product wants to use Redis Poor Man Cluster for its Pub/SUB model.The solution needs to have the following :-
+
+* Automated Set up of a poor man cluster with redis docker containers.
+* Nodejs npm module which can act as a client to Redis Poor Man Cluster (n number of redis docker containers , n>= 1).
+* The Client has to handle failures of any Redis in the cluster so that the subscribed channels are not lost. (Channel or topic is just a terminology for pub sub model).
 
 
 ## Redis Cluster
