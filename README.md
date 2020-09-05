@@ -21,7 +21,7 @@ cd Locusnine-Project
 sh run.sh CREATE
 ```
 
-It will start a redis cluster with 3 master and 3 slave node in data sharding mode.
+It will start a redis cluster with 3 master and 3 slave nodes in data sharding mode.
 
 
 ### Destroy Cluster
@@ -33,7 +33,7 @@ In order to destroy cluster run the below command
 ### Monitoring CLUSTER
 
 redis state container is also packaged with this solution, which gives the basic
-cluster monitoring. redis state cluster can be access on ```localhost:8080```
+cluster monitoring. redis state UI can be access on ```localhost:8080```
 
 ## NodeJS Client
 
