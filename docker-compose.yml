@@ -4,6 +4,7 @@ services:
     build:
       context: ./redis_node
       dockerfile: ./Dockerfile
+    container_name: redis-node-0
     volumes:
       - redis-cluster_data-0:/data
 
@@ -11,6 +12,7 @@ services:
     build:
       context: ./redis_node
       dockerfile: ./Dockerfile
+    container_name: redis-node-1
     volumes:
       - redis-cluster_data-1:/data
 
@@ -18,6 +20,7 @@ services:
     build:
       context: ./redis_node
       dockerfile: ./Dockerfile
+    container_name: redis-node-2
     volumes:
       - redis-cluster_data-2:/data
 
@@ -25,6 +28,7 @@ services:
     build:
       context: ./redis_node
       dockerfile: ./Dockerfile
+    container_name: redis-node-3
     volumes:
       - redis-cluster_data-3:/data
 
@@ -32,6 +36,7 @@ services:
     build:
       context: ./redis_node
       dockerfile: ./Dockerfile
+    container_name: redis-node-4
     volumes:
       - redis-cluster_data-4:/data
 
@@ -39,6 +44,7 @@ services:
     build:
       context: ./redis_node
       dockerfile: ./Dockerfile
+    container_name: redis-node-5
     volumes:
       - redis-cluster_data-5:/data
 
@@ -46,6 +52,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: redis-cluster-init
     depends_on:
       - redis-node-0
       - redis-node-1
@@ -60,6 +67,7 @@ services:
 
   redis-cluster-stats:
     image: insready/redis-stat
+    container_name: redis_stat
     command: --server redis-node-0:6379 redis-node-1:6379 redis-node-2:6379 redis-node-3:6379 redis-node-4:6379 redis-node-5:6379
     ports:
       - "8080:63790"

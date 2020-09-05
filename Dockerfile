@@ -1,4 +1,5 @@
-FROM redis:6.0.7
+ARG VERSION=6.0.7
+FROM redis:$VERSION
 RUN apt-get update -qq && apt-get install iputils-ping -yqq && apt-get clean -yqq
 RUN mkdir -p /usr/local/etc/redis/
 EXPOSE 6379
