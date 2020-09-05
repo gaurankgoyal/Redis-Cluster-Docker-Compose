@@ -21,7 +21,7 @@ docker run -d --net=$NETWORK_NAME --name subscriber node-subscriber-npm
 while [ 1 ]   # Endless loop.
 do
   echo "Press CTRL-C to Kill Subsriber"
-  docker logs subscriber
+  docker logs --tail 60 subscriber
   sleep 2
   clear
 done

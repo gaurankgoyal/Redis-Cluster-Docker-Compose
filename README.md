@@ -56,3 +56,4 @@ In order to start nodejs subscriber run the below
 * Docker-Compose
 * Shell Script
 * ioredis npm package
+* nodeJS
