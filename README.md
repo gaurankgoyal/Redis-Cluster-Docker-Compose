@@ -30,6 +30,11 @@ In order to destroy cluster run the below command
 ```sh run.sh DESTROY```
 
 
+### Monitoring CLUSTER
+
+redis state container is also packaged with this solution, which gives the basic
+cluster monitoring. redis state cluster can be access on ```localhost:8080```
+
 ## NodeJS Client
 
 Simple node js publisher and scriber application using ioredis nmp module.
