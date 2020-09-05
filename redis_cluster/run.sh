@@ -11,11 +11,13 @@ then
       echo `docker-compose up -d`
       echo "-----CLUSTER DETAILS-----"
       sleep 10
-      echo `docker logs redis-cluster-init`
+      docker logs redis-cluster-init > cluster_info.txt
+      more cluster_info.txt
       ;;
     DESTROY)
       echo "DESTROYING CLUSTER"
       echo `docker-compose down`
+      docker volume rm redis_cluster_redis-cluster_data-0 redis_cluster_redis-cluster_data-1 redis_cluster_redis-cluster_data-2 redis_cluster_redis-cluster_data-3 redis_cluster_redis-cluster_data-4 redis_cluster_redis-cluster_data-5
       ;;
     esac
 else

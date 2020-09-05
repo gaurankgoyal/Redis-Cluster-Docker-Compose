@@ -1,0 +1,14 @@
+{
+  "name": "Subscriber",
+  "version": "1.0.0",
+  "description": "Subscriber App",
+  "author": "Gaurank goyal <gaurank25@gmail.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ioredis": "^4.17.3",
+    "express": "^4.16.1"
+  }
+}
