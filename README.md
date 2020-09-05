@@ -15,7 +15,7 @@ Docker Compose to Deploy Redis Cluster in Docker in Data Sharding technique with
 ### How to Deploy Redis Cluster?
 In order to start Redius CLuster, run the below command.
 
-```
+```bash
 git clone https://github.com/gaurankgoyal/Locusnine-Project.git
 cd Locusnine-Project
 sh run.sh CREATE
@@ -43,11 +43,15 @@ Simple node js publisher and scriber application using ioredis nmp module.
 
 In order to start nodejs publisher run the below
 
-```sh start_publisher.sh```
+```bash
+sh start_publisher.sh
+```
 
 In order to start nodejs subscriber run the below
 
-```sh start_subscriber.sh```
+```bash
+sh start_subscriber.sh
+```
 
 
 ## Tools and Tech Used

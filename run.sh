@@ -6,17 +6,21 @@ if [ "$request" == "CREATE" -o "$request" == "DESTROY" ]
 then
   case $request in
     CREATE)
-      echo "----CREATING REDIS CLUSTER----"
+      echo "------CREATING REDIS CLUSTER-------"
       sleep 2
       echo `docker-compose  -f redis_cluster/docker-compose.yml up -d`
-      echo "-----CLUSTER DETAILS-----"
+      echo "----------CLUSTER DETAILS----------"
       sleep 10
       docker exec redis-node-1 redis-cli cluster nodes > cluster_info.txt
       CAT cluster_info.txt
+      echo "----------------DONE---------------"
       ;;
     DESTROY)
       echo "DESTROYING CLUSTER"
       echo `docker-compose  -f redis_cluster/docker-compose.yml down`
+      echo "DELETE VOLUMES"
+      VOLUMES=`docker volume ls | grep "redis-cluster_data-" | awk '{print $2}'`
+      docker volume rm $VOLUMES
       ;;
     esac
 else
