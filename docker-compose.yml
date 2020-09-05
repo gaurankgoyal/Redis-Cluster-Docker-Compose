@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   redis-node-0:
     build:
@@ -57,6 +57,20 @@ services:
       - 'PORT=6379'
       - 'REDIS_CLUSTER_REPLICAS=1'
       - 'REDIS_NODES=redis-node-0 redis-node-1 redis-node-2 redis-node-3 redis-node-4 redis-node-5'
+
+  redis-cluster-stats:
+    image: insready/redis-stat
+    command: --server redis-node-0:6379 redis-node-1:6379 redis-node-2:6379 redis-node-3:6379 redis-node-4:6379 redis-node-5:6379
+    ports:
+      - "8080:63790"
+    depends_on:
+      - redis-node-0
+      - redis-node-1
+      - redis-node-2
+      - redis-node-3
+      - redis-node-4
+      - redis-node-5
+      - redis-cluster-init
 
 volumes:
   redis-cluster_data-0:
