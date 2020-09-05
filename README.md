@@ -34,7 +34,7 @@ In order to destroy cluster run the below command
 
 Simple node js publisher and scriber application using ioredis nmp module.
 
-### How to start?
+### How to start Publisher and Subscriber?
 
 In order to start nodejs publisher run the below
 
@@ -43,3 +43,11 @@ In order to start nodejs publisher run the below
 In order to start nodejs subscriber run the below
 
 ```sh start_subscriber.sh```
+
+
+## Tools and Tech Used
+
+* Docker
+* Docker-Compose
+* Shell Script
+* ioredis npm package
