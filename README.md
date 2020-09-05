@@ -28,7 +28,9 @@ Simple node js publisher and scriber application using ioredis nmp module.
 ### How to start?
 
 In order to start nodejs publisher run the below
+
 ```sh start_publisher.sh```
 
 In order to start nodejs subscriber run the below
+
 ```sh start_subscriber.sh```
