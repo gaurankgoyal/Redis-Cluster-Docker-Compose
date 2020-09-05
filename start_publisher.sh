@@ -22,7 +22,7 @@ docker run -d --net=$NETWORK_NAME --name publisher node-publisher-npm
 while [ 1 ]   # Endless loop.
 do
   echo "Press CTRL-C to Kill publisher"
-  docker logs --tail 60 publisher
+  docker logs --tail 25 publisher
   sleep 2
   clear
 done
