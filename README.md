@@ -11,8 +11,10 @@ cd Locusnine-Project
 sh run.sh CREATE
 ```
 
-it will start a redis cluster with 3 master and 3 slave node in data sharding mode.
+It will start a redis cluster with 3 master and 3 slave node in data sharding mode.
 
-in order to destroy cluster use
+
+## Destroy Cluster
+In order to destroy cluster run the below command
 
 ```sh run.sh DESTROY```
