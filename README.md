@@ -27,7 +27,9 @@ It will start a redis cluster with 3 master and 3 slave nodes in data sharding m
 ### Destroy Cluster
 In order to destroy cluster run the below command
 
-```sh run.sh DESTROY```
+```bash
+sh run.sh DESTROY
+```
 
 
 ### Monitoring CLUSTER
