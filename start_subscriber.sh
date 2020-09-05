@@ -1,18 +1,17 @@
 #!/bin/bash
 
-# Build Docker image
-
 trap ctrl_c INT
 
 function ctrl_c() {
         echo "** Trapped CTRL-C"
         echo "Kill container subscriber"
         docker stop subscriber
+        docker container rm subscriber
         exit 1
 }
-
+# Build Docker image
 echo "building docker image.."
-docker build -t node-subscriber-npm .
+docker build -t node-subscriber-npm /node_subscriber.
 
 NETWORK_NAME=`docker network ls | grep "redis_cluster" | awk '{print $2}'`
 

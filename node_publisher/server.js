@@ -43,7 +43,10 @@ async function main() {
     // Sleep 4 seconds and then publish garage door "opened" event.
 		while (true){
     	await sleep(2);
-    	pub.publish(channel, msg);
+    	pub.publish(channel, msg, (error, count) => {
+			    if (error) {
+			        throw new Error(error);
+			    }});
 			console.log(`Message Published ${msg} on channel ${channel}`);
 			msg++;
 		}
