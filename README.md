@@ -13,7 +13,7 @@ Redis Poor Man Cluster is a group of stand alone independent Redis Docker Contai
 Docker Compose to Deploy Redis Cluster in Docker in Data Sharding technique with 3 master and 3 slaves
 
 ### How to Deploy Redis Cluster?
-In order to start Redius CLuster, run the below command.
+In order to start Redius Cluster, run the below command.
 
 ```bash
 git clone https://github.com/gaurankgoyal/Locusnine-Project.git
